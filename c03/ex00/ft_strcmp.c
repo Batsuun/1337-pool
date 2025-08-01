@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnasseh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 17:48:36 by tnasseh           #+#    #+#             */
-/*   Updated: 2025/07/22 17:51:16 by tnasseh          ###   ########.fr       */
+/*   Created: 2025/07/29 03:19:11 by tnasseh           #+#    #+#             */
+/*   Updated: 2025/08/01 03:50:03 by tnasseh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (*str)
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			i++;
-		else
-			return (0);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	return (1);
+	return (s1[i] - s2[i]);
 }

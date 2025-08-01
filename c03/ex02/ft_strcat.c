@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnasseh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 11:41:54 by tnasseh           #+#    #+#             */
-/*   Updated: 2025/07/22 17:33:21 by tnasseh          ###   ########.fr       */
+/*   Created: 2025/07/29 06:51:33 by tnasseh           #+#    #+#             */
+/*   Updated: 2025/08/01 01:55:45 by tnasseh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (src[i])
+	while (dest[i] != '\0')
 	{
-		*(dest + i) = *(src + i);
 		i++;
 	}
-	*(dest + i) = '\0';
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	dest[i + j] = '\0';
 	return (dest);
 }

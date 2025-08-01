@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnasseh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 00:09:51 by tnasseh           #+#    #+#             */
-/*   Updated: 2025/07/22 18:24:08 by tnasseh          ###   ########.fr       */
+/*   Created: 2025/07/29 06:38:33 by tnasseh           #+#    #+#             */
+/*   Updated: 2025/08/01 02:12:16 by tnasseh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (*str)
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
-		if (str[i] >= 32)
-			i++;
-		else
-			return (0);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	return (1);
+	if (i < n)
+		return (s1[i] - s2[i]);
+	return (0);
 }
